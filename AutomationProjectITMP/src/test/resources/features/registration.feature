@@ -5,7 +5,6 @@ Feature: Registration on LambdaTest Website
 
   @valid @oyin
   Scenario: Valid form registration
-#    Given I navigate to the form demo website
     When I enter my name
     And I enter a valid email address
     And I enter a valid password
@@ -22,7 +21,6 @@ Feature: Registration on LambdaTest Website
 
   @valid
   Scenario Outline: Valid form registration with examples
-#    Given I navigate to the form demo website
     When I enter my name "<fullName>"
     And I enter an email address "<emailAddress>"
     And I enter a valid password "<password>"
@@ -45,7 +43,6 @@ Feature: Registration on LambdaTest Website
 
   @invalid1
   Scenario: Invalid form registration around name field
-#    Given I navigate to the form demo website
     When I omit my name
     And I enter a valid email address
     And I enter a valid password
@@ -62,7 +59,6 @@ Feature: Registration on LambdaTest Website
 
   @invalid
   Scenario: Invalid form registration around email field
-#    Given I navigate to the form demo website
     When I enter my name
     And I enter an email address "ogann"
     And I enter a valid password

@@ -10,11 +10,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
-import static org.bouncycastle.oer.its.template.ieee1609dot2.basetypes.Ieee1609Dot2BaseTypes.Duration;
-
 public class DashboardPage {
 
     public WebDriver driver;
@@ -85,9 +80,6 @@ public class DashboardPage {
     }
 
     public void verifyConnectionsTab() {
-//        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-//        Assert.assertTrue(connectionsTab.isDisplayed(), "Connections tab is not visible on the dashboard page");
-
         WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(5));
         WebElement connectionTab = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[normalize-space()='Connections']")));
         Assert.assertTrue(connectionTab.isDisplayed(), "Connections tab is not visible on the dashboard page");
