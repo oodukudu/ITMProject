@@ -12,3 +12,4 @@ Feature: Validation on collabtool landing page
       | collaborationtool   | 6BzbqpkbupVfrw   |
       | collaborationtoolzz | 6Bzbqp3ckbupVfrw |
       | collaboration       | 6Bzp3ckbupVfr    |
+

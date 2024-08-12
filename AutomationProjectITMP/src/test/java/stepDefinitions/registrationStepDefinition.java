@@ -5,7 +5,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -30,19 +29,14 @@ public class registrationStepDefinition {
 
     @When("I enter my name")
     public void i_enter_my_name() {
-//        driver.findElement(By.xpath("//*[@id=\"name\"]")).sendKeys("Oyin O");
         registrationPage.enterFullName();
-//        registrationPage.nameField.sendKeys("Oyin O");
     }
     @When("I enter a valid email address")
     public void i_enter_a_valid_email_address() {
-        //driver.findElement(By.xpath("//input[@id='inputEmail4']")).sendKeys("oyinodukudu@gmail.com");
-       // registrationPage.emailAddressField.sendKeys("oyinodukudu@gmail.com");
         registrationPage.enterEmail();
     }
     @When("I enter a valid password")
     public void i_enter_a_valid_password() {
-//        driver.findElement(By.xpath("//input[@id='inputPassword4']")).sendKeys("hahdgdhiwolqk_208gdh");
         registrationPage.enterPassword();
     }
     @When("I enter my company name")
