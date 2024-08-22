@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import pageObject.DashboardPage;
+import pageObject.StudentTeacherRegPage;
 
 public class DashboardStepDefinition {
 
@@ -18,10 +19,14 @@ public class DashboardStepDefinition {
 
     public BasePage basePage;
 
+    public StudentTeacherRegPage studentTeacherRegPage;
+
+
     public DashboardStepDefinition() {
         driver = new ChromeDriver();
         dashboardPage = new DashboardPage(driver);
         basePage = new BasePage(driver);
+        studentTeacherRegPage = new StudentTeacherRegPage(driver);
     }
 
     @Given("I am on the home page with login details {string} {string}")
@@ -29,9 +34,9 @@ public class DashboardStepDefinition {
         basePage.goToCollabToolsUrl();
         dashboardPage.landingPageLoginDetails(username, password);
 
-        dashboardPage.verifyHomepageWording();
-        Assert.assertEquals("https://test.rcs-ct.com/", driver.getCurrentUrl());
-//        dashboardPage.homePageIsDisplayed();
+//        dashboardPage.verifyHomepageWording();
+//        Assert.assertEquals("https://test.rcs-ct.com/", driver.getCurrentUrl());
+        dashboardPage.homePageIsDisplayed();
     }
 
     @When("I select the login button")
@@ -55,4 +60,5 @@ public class DashboardStepDefinition {
         Assert.assertTrue(dashboardPage.loginPageWarningMsg.isDisplayed(), "Pop up not displayed/locator used is incorrect");
         basePage.closeBroswer();
     }
+
 }
